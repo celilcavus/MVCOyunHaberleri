@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .card-container {
+        border: 1px solid #dc3545;
+        margin-bottom: 3rem;
+        display: flex;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+        .card-container:hover {
+            box-shadow: 5px 10px #888888;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+    .card-image {
+        display: contents;
+    }
+
+        .card-image img {
+            border-radius: 5px 0px 0px 5px;
+            width:100%;
+            height:700px;
+        }
+
+    .general {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title, .card-contact, .btn {
+        padding: 1rem;
+        margin: .3rem;
+    }
+
+        .card-contact p {
+            text-transform: capitalize;
+        }
+
+    .title {
+        text-align: center;
+    }
+
+        .title a {
+            color: #dc3545;
+        }
+    /*button*/
+
+
+    /** responsive */
+    @@media only screen and (max-width: 992px) {
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.5rem;
+        }
+    }
+</style>
+@model List<OyunHaberleri.Models.Data.OyunlarHaberleri>
+@foreach (var item in Model)
+{
+    <div class="card-container">
+        <div class="card-image"><img src="~/Image/@item.image" alt="Resim yok" /></div>
+        <div class="general">
+            <div class="title"><h6><a href="#">@item.title</a></h6></div>
+            <div class="card-contact">
+                <p>@item.icerik</p>
+            </div>
+            <button class="btn btn-danger"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="alert alert-danger"> Sayfamıza Reklam Verebilirsiniz.. </div>
+}
+
+

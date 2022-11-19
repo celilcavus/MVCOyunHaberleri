@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "GamePage";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<style>
+    .general {
+        display: flex;
+        flex-direction: column row;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 30%;
+        border-radius: 5px;
+        margin: 1rem;
+        cursor: pointer;
+        display:block;
+    }
+
+        .card:hover {
+            box-shadow: 5px 10px #888888;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+    img {
+        border-radius: 5px 5px 0 0;
+        width: 100%;
+        height:400px;
+       
+    }
+
+    .cont {
+        padding: 2px 16px;
+    }
+
+    .btn {
+        margin: 0rem 1rem 1rem 1rem;
+    }
+
+    @@media only screen and (max-width:680px) {
+        .general {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            width: 100%;
+        }
+    }
+</style>
+@using OyunHaberleri.Models.Data;
+@model List<Oyunlar>
+
+
+<div class="general container">
+    @foreach (var item in Model)
+    {
+
+        <div class="card">
+            <img src="~/Image/@item.image" alt="Avatar" style="width:100%">
+            <div class="cont">
+                <h4><b>@item.title</b></h4>
+                <p>@item.icerik</p>
+            </div>
+            <button class="btn btn-danger" type="button">Devam Et</button>
+        </div>
+
+    }
+</div>
+
+

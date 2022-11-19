@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/090a716007.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">OyunHaberleri</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Anasayfa", "HomePage", "Home")</li>
+                <li>@Html.ActionLink("Oyunlar","GamePage","Game")</li>
+                <li>@Html.ActionLink("Hakkımızda","AbaoutPage","Abaout")</li>
+                <li>@Html.ActionLink("İletişim","ContactPage","Contact")</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <footer class="modal-footer " style="padding:2rem; text-align:center">Tüm Hakları Saklıdır.&copy;</footer>
+</body>
+</html>

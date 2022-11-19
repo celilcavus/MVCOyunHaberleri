@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "AbaoutPage";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<style>
+    .ab-text {
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 2rem;
+    }
+
+    @@media only screen and (max-width:680px) {
+        .ab-text {
+            font-size: 1rem;
+        }
+    }
+
+    @@media only screen and (max-width:400px) {
+        .ab-text {
+            font-size: .8rem;
+        }
+    }
+</style>
+<div class="container">
+    @using OyunHaberleri.Models.Data
+    @model List<hakkimizda>
+
+    @foreach (var item in Model)
+    {
+        <h1 class="text-center">@item.title</h1>
+        <h5>
+            <p class="ab-text">@item.icerik</p>
+        </h5>
+    }
+</div>
+
